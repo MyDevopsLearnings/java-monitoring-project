@@ -1,0 +1,16 @@
+groups:
+- name: spring-alerts
+
+  rules:
+
+  - alert: AppDown
+
+    expr: up{job="springboot"} == 0
+
+    for: 1m
+
+    labels:
+      severity: critical
+
+    annotations:
+      summary: Spring Boot Application Down
