@@ -3,14 +3,10 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
         stage('Build') {
             steps {
+                sh 'pwd'
+                sh 'ls -la'
                 sh 'mvn clean package'
             }
         }
